@@ -1,0 +1,8 @@
+== O/E DIRECTION DIAGNOSIS ==
+(O/E = observed deatths / expected(deaths predicted by model sum of probabilities))
+O/E > 1 => model UNDER-predicts risk (more obs deaths than predicted)
+O/E < 1 => model OVER-predicts risk (fewer obs deaths than predicted)
+
+B_MIMIC-IV   observed= 1988  predicted=  1988.3  O/E=1.000  => OVER-pred
+A_MIMIC-III  observed=  159  predicted=   119.7  O/E=1.328  => UNDER-pred
+V_eICU       observed= 1852  predicted=  2875.6  O/E=0.644  => OVER-pred

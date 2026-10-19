@@ -1,0 +1,7 @@
+Model,Weight,n,deaths,AUC,Brier
+MIMIC-IV on its own cohort (unweighted),1.0,15983,1988,0.7689,0.093
+eICU: frozen model (unweighted),0.0,14428,1852,0.689,0.1256
+eICU: frozen model (reweighted to MIMIC-IV case-mix),0.0,14428,1852,0.689,0.1373
+"eICU: refit model (unweighted, reference)",0.0,14428,1852,0.7504,0.0995
+
+# weighted calib slope on eICU with MIMIC-IV target-propensity weights: 0.449 / intercept -1.244

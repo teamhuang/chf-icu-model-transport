@@ -1,0 +1,9 @@
+Cohort,Strategy,AUC,AUC_gain_vs_frozen,Brier,CalibIntercept,CalibSlope,CalibOE,Info
+A_MIMIC-III,unchanged,0.7482,0.0,0.1016,0.5279,1.0865,1.3283,frozen B model
+A_MIMIC-III,intercept_update,0.7482,0.0,0.0999,-0.0456,1.0862,0.8797,intercept_shift=+0.528
+A_MIMIC-III,recalibrate,0.7482,0.0,0.0992,0.0023,1.0015,0.9999,"slope=1.087, intercept=+0.528"
+A_MIMIC-III,refit,0.7933,0.0451,0.0905,0.0082,1.0056,0.9998,B-refit on target cohort
+V_eICU,unchanged,0.689,0.0,0.1256,-1.2235,0.4319,0.6441,frozen B model
+V_eICU,intercept_update,0.689,0.0,0.1081,-0.695,0.4319,1.4135,intercept_shift=-1.223
+V_eICU,recalibrate,0.689,0.0,0.1044,-0.0017,0.9989,1.0001,"slope=0.432, intercept=-1.223"
+V_eICU,refit,0.7504,0.0613,0.0995,-0.0013,0.9996,0.9997,B-refit on target cohort

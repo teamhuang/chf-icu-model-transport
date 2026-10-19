@@ -1,0 +1,81 @@
+{
+  "note": "Descriptive subgroup estimates for the frozen transported model. Race is a coded 1/2/3 column present in BOTH the MIMIC-IV and the eICU redistributed files. The code->label mapping is NOT documented in the released files, so codes are reported verbatim rather than assigned to ethnic groups. No interaction test and no per-stratum calibration CI are performed; these are not inferential subgroup claims.",
+  "strata": {
+    "eICU-CRD": [
+      {
+        "race_code": 1,
+        "n": 10806,
+        "deaths": 1468,
+        "AUC": 0.6780911315459436,
+        "AUC_ci": [
+          0.6635181332650081,
+          0.6929064935155409
+        ],
+        "slope": 0.4078585059076584,
+        "OE": 0.6464074248412549
+      },
+      {
+        "race_code": 2,
+        "n": 2785,
+        "deaths": 287,
+        "AUC": 0.7151030929273036,
+        "AUC_ci": [
+          0.6825654349958175,
+          0.747027282449049
+        ],
+        "slope": 0.5055924098437355,
+        "OE": 0.6399220937954723
+      },
+      {
+        "race_code": 3,
+        "n": 837,
+        "deaths": 97,
+        "AUC": 0.7222067428252995,
+        "AUC_ci": [
+          0.6630814478971593,
+          0.77156020590033
+        ],
+        "slope": 0.5107670626590363,
+        "OE": 0.6216108668471378
+      }
+    ],
+    "MIMIC-IV": [
+      {
+        "race_code": 1,
+        "n": 11056,
+        "deaths": 1340,
+        "AUC": 0.7657414604622013,
+        "AUC_ci": [
+          0.7512699828506901,
+          0.7789381028456897
+        ],
+        "slope": 1.0073943430303247,
+        "OE": 0.9490225984940653
+      },
+      {
+        "race_code": 2,
+        "n": 2124,
+        "deaths": 215,
+        "AUC": 0.7923398345657655,
+        "AUC_ci": [
+          0.7532754335036902,
+          0.8244004636365222
+        ],
+        "slope": 1.0796296784759103,
+        "OE": 0.9045347352195291
+      },
+      {
+        "race_code": 3,
+        "n": 2803,
+        "deaths": 433,
+        "AUC": 0.7707233412264547,
+        "AUC_ci": [
+          0.7474334405631473,
+          0.7948652164793074
+        ],
+        "slope": 0.9564596376831545,
+        "OE": 1.2785892841889999
+      }
+    ]
+  }
+}

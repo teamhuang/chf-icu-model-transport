@@ -1,0 +1,8 @@
+Cohort,Model,AUC
+A_MIMIC-III,Base (21 vars),0.7481926742237311
+A_MIMIC-III,Base + NT-proBNP + LVEF,0.7961447839557708
+A_MIMIC-III,"Apparent (cohort-specific fit, 21 vars)",0.7933309833460108
+B_MIMIC-IV,"Base (21 vars, in-sample)",0.7688583807237853
+B_MIMIC-IV,Base + SOFA + APSIII (in-sample),0.8684436019475194
+V_eICU,"Base (21 vars, in-sample)",0.7503662827202832
+V_eICU,Base + SOFA + APSIII (in-sample),0.7946515423804266

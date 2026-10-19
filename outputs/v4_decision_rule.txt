@@ -1,0 +1,22 @@
+== UPDATE DECISION RULE (suggested operational guidance from v4)==
+
+Define per-site monitoring state from:
+  - observed/expected ratio (O/E) at current site using frozen model
+  - available update-set size in patients (or deaths)
+
+Recommended decision tree:
+  A) |O/E - 1| < 0.10  OR  update-set < 100 patients:
+       ACTION: do not update; continue monitoring; frozen model remains acceptable
+  B) |O/E - 1| >= 0.10 but < 0.20, OR update-set 100~499 patients:
+       ACTION: intercept-only update (1 parameter, minimal variance, safe at small n)
+  C) |O/E - 1| >= 0.20 AND update-set >= 500 patients (or ~60-80 deaths):
+       ACTION: full 2-parameter logistic recalibration (slope + intercept)
+  D) Full retrain (all coefficients + re-selection of variables) only if:
+       CASE-MIX dramatically different (mean admission year / ICD mix shifted)
+       AND update-set >= 2000 patients (enough to support > 20 events per variable)
+
+Based on v4 empirical findings:
+  - intercept-only is more stable than 2-parameter recalibration at n<200 (SD of slope ~ 0.35 to 2.06 across sizes, with intercept-only variance lower because it estimates 1 parameter).
+  - 2-parameter recalibration is stable from ~500 patients.
+  - reweighting diagnostics show case-mix does NOT explain calibration drift, so case-mix-only fixes (e.g., importance weighting) are ineffective; intercept / slope updates target the actual failure mode.
+  - post-update DCA (independent test) shows net benefit improvement in thresholds 5%-40%.

@@ -1,0 +1,162 @@
+{
+  "paired_recal_vs_refit": {
+    "n_boot": 1000,
+    "dAUC_refit_minus_recal": {
+      "mean": 0.0551,
+      "ci95": [
+        0.0425,
+        0.0685
+      ]
+    },
+    "dBrier_refit_minus_recal": {
+      "mean": -0.0041,
+      "ci95": [
+        -0.0056,
+        -0.0028
+      ]
+    },
+    "dNetBenefit_refit_minus_recal": {
+      "0.05": {
+        "mean": 0.00531,
+        "ci95": [
+          0.0036,
+          0.007
+        ]
+      },
+      "0.1": {
+        "mean": 0.0124,
+        "ci95": [
+          0.009,
+          0.016
+        ]
+      },
+      "0.2": {
+        "mean": 0.0081,
+        "ci95": [
+          0.0041,
+          0.0125
+        ]
+      },
+      "0.3": {
+        "mean": 0.00467,
+        "ci95": [
+          0.001,
+          0.0085
+        ]
+      }
+    },
+    "point_AUC": {
+      "recal": 0.6969,
+      "refit": 0.7523
+    },
+    "point_Brier": {
+      "recal": 0.1014,
+      "refit": 0.0973
+    }
+  },
+  "flexible_calibration": {
+    "frozen": {
+      "ECE": 0.0984,
+      "avg_calibrated_deviation": 0.0984
+    },
+    "recalibrated": {
+      "ECE": 0.0201,
+      "avg_calibrated_deviation": 0.0201
+    }
+  },
+  "weight_sensitivity": {
+    "0.1-10": {
+      "mean_abs_SMD": 0.0599,
+      "max_abs_SMD": 0.2147,
+      "ESS": 2516.0,
+      "ESS_pct": 17.4,
+      "weighted_slope": 0.4483,
+      "weighted_intercept": -0.8814,
+      "weighted_OE": 0.9412,
+      "weight_min": 0.1,
+      "weight_median": 0.137,
+      "weight_max": 10.0
+    },
+    "1-5": {
+      "mean_abs_SMD": 0.1732,
+      "max_abs_SMD": 0.5343,
+      "ESS": 9113.0,
+      "ESS_pct": 63.2,
+      "weighted_slope": 0.4295,
+      "weighted_intercept": -1.1246,
+      "weighted_OE": 0.7251,
+      "weight_min": 1.0,
+      "weight_median": 1.0,
+      "weight_max": 5.0
+    },
+    "p1p99": {
+      "mean_abs_SMD": 0.0923,
+      "max_abs_SMD": 0.3541,
+      "ESS": 1220.0,
+      "ESS_pct": 8.5,
+      "weighted_slope": 0.4523,
+      "weighted_intercept": -0.7521,
+      "weighted_OE": 1.0353,
+      "weight_min": 0.0,
+      "weight_median": 0.137,
+      "weight_max": 34.584
+    }
+  },
+  "weighted_slope_CI01_10": {
+    "mean": 0.4503,
+    "ci95": [
+      0.3832,
+      0.5201
+    ],
+    "n_boot": 300
+  },
+  "learning_curve_monotonicity": {
+    "n_splits": 10,
+    "non_monotone_splits": 1,
+    "per_update_success_with_CI": [
+      {
+        "n_pat": 100,
+        "success_frac": 13.3,
+        "wilson_lo": 6.9,
+        "wilson_hi": 24.2,
+        "trials": 60
+      },
+      {
+        "n_pat": 200,
+        "success_frac": 28.3,
+        "wilson_lo": 18.5,
+        "wilson_hi": 40.8,
+        "trials": 60
+      },
+      {
+        "n_pat": 500,
+        "success_frac": 56.7,
+        "wilson_lo": 44.1,
+        "wilson_hi": 68.4,
+        "trials": 60
+      },
+      {
+        "n_pat": 1000,
+        "success_frac": 80.0,
+        "wilson_lo": 68.2,
+        "wilson_hi": 88.2,
+        "trials": 60
+      },
+      {
+        "n_pat": 2000,
+        "success_frac": 95.0,
+        "wilson_lo": 86.3,
+        "wilson_hi": 98.3,
+        "trials": 60
+      },
+      {
+        "n_pat": 5000,
+        "success_frac": 100.0,
+        "wilson_lo": 94.0,
+        "wilson_hi": 100.0,
+        "trials": 60
+      }
+    ],
+    "note": "success_frac = share of the (10x6) held-out recalibrations judged stable at each size (PRIMARY per-update metric); the 'all-six-per-split' minimum-size distribution is the SECONDARY metric reported separately."
+  }
+}

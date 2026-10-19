@@ -1,0 +1,78 @@
+{
+  "learning_curve_cluster": {
+    "100": {
+      "pooled_success_pct": 13.3,
+      "cluster_bootstrap_ci": [
+        6.7,
+        20.0
+      ],
+      "naive_wilson_like_se": 4.39
+    },
+    "200": {
+      "pooled_success_pct": 28.3,
+      "cluster_bootstrap_ci": [
+        18.3,
+        38.3
+      ],
+      "naive_wilson_like_se": 5.82
+    },
+    "500": {
+      "pooled_success_pct": 56.7,
+      "cluster_bootstrap_ci": [
+        45.0,
+        71.7
+      ],
+      "naive_wilson_like_se": 6.4
+    },
+    "1000": {
+      "pooled_success_pct": 80.0,
+      "cluster_bootstrap_ci": [
+        65.0,
+        93.3
+      ],
+      "naive_wilson_like_se": 5.16
+    },
+    "2000": {
+      "pooled_success_pct": 95.0,
+      "cluster_bootstrap_ci": [
+        90.0,
+        100.0
+      ],
+      "naive_wilson_like_se": 2.81
+    },
+    "5000": {
+      "pooled_success_pct": 100.0,
+      "cluster_bootstrap_ci": [
+        100.0,
+        100.0
+      ],
+      "naive_wilson_like_se": 0.0
+    }
+  },
+  "across_split_delta": {
+    "n_splits": 10,
+    "dAUC_retrain_minus_recalibrate": {
+      "mean": 0.0574,
+      "ci95": [
+        0.0548,
+        0.06
+      ],
+      "range": [
+        0.0503,
+        0.0634
+      ]
+    },
+    "dBrier_retrain_minus_recalibrate": {
+      "mean": 0.0044,
+      "ci95": [
+        0.0042,
+        0.0046
+      ],
+      "range": [
+        0.004,
+        0.0051
+      ]
+    },
+    "note": "These CIs reflect UPDATE-SAMPLE (split-to-split) variability. The v6 paired patient bootstrap (single fixed split) reflects TEST-SET sampling variability only; the two are different estimands and are now reported separately."
+  }
+}

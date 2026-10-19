@@ -1,0 +1,773 @@
+{
+  "meta": {
+    "seed": 2026,
+    "n_common_vars": 21
+  },
+  "lp_dispersion": {
+    "MIMIC-IV": {
+      "n": 15983,
+      "lp_mean": -2.339,
+      "lp_sd": 1.0724,
+      "lp_p25": -3.0632,
+      "lp_p75": -1.6774,
+      "lp_iqr": 1.3858
+    },
+    "eICU-CRD": {
+      "n": 14428,
+      "lp_mean": -2.0364,
+      "lp_sd": 1.688,
+      "lp_p25": -3.2166,
+      "lp_p75": -0.8993,
+      "lp_iqr": 2.3174
+    },
+    "MIMIC-III": {
+      "n": 1176,
+      "lp_mean": -2.5217,
+      "lp_sd": 0.9656,
+      "lp_p25": -3.1526,
+      "lp_p75": -1.8844,
+      "lp_iqr": 1.2681
+    }
+  },
+  "lp_dispersion_vs_slope": {
+    "rule": "A model calibrated where the linear predictor is under-dispersed transports with a calibration slope of approximately SD_LP(development)/SD_LP(target); the ratio is the attenuation expected from dispersion mismatch alone.",
+    "eICU-CRD": {
+      "implied_slope": 0.6353,
+      "observed_slope": 0.432,
+      "residual_observed_minus_implied": -0.2033
+    },
+    "MIMIC-III": {
+      "implied_slope": 1.1106,
+      "observed_slope": 1.0985,
+      "residual_observed_minus_implied": -0.0121
+    }
+  },
+  "calibration_ci_transport": {
+    "B_MIMIC-IV_insample": {
+      "slope": 1.0002,
+      "alpha": 0.0001,
+      "OE": 0.9998,
+      "ci": {
+        "slope": [
+          0.9523,
+          1.0542
+        ],
+        "alpha": [
+          -0.1049,
+          0.0935
+        ],
+        "OE": [
+          0.9579,
+          1.0396
+        ]
+      }
+    },
+    "A_MIMIC-III": {
+      "slope": 1.0985,
+      "alpha": 0.551,
+      "OE": 1.3283,
+      "ci": {
+        "slope": [
+          0.8803,
+          1.3254
+        ],
+        "alpha": [
+          0.0398,
+          1.0235
+        ],
+        "OE": [
+          1.1608,
+          1.526
+        ]
+      }
+    },
+    "V_eICU": {
+      "slope": 0.432,
+      "alpha": -1.2233,
+      "OE": 0.6441,
+      "ci": {
+        "slope": [
+          0.3996,
+          0.467
+        ],
+        "alpha": [
+          -1.2839,
+          -1.1614
+        ],
+        "OE": [
+          0.6186,
+          0.6721
+        ]
+      }
+    }
+  },
+  "calibration_ci_heldout_repsplit": {
+    "frozen": {
+      "slope": 0.4548,
+      "alpha": -1.2279,
+      "OE": 0.6285,
+      "Brier": 0.1216,
+      "ci": {
+        "slope": [
+          0.4085,
+          0.5041
+        ],
+        "alpha": [
+          -1.3161,
+          -1.1461
+        ],
+        "OE": [
+          0.5934,
+          0.6641
+        ]
+      }
+    },
+    "recalibrated_2par": {
+      "slope": 1.1073,
+      "alpha": 0.1213,
+      "OE": 0.9494,
+      "Brier": 0.1014,
+      "ci": {
+        "slope": [
+          0.9945,
+          1.2272
+        ],
+        "alpha": [
+          -0.0805,
+          0.3325
+        ],
+        "OE": [
+          0.8985,
+          1.0022
+        ]
+      }
+    }
+  },
+  "cumulative_stability": {
+    "per_size": {
+      "100": {
+        "hit_rate_pct": 13.3,
+        "per_split_all6_count": {
+          "0": 0,
+          "1": 0,
+          "2": 1,
+          "3": 1,
+          "4": 0,
+          "5": 1,
+          "6": 1,
+          "7": 1,
+          "8": 1,
+          "9": 2
+        },
+        "all6_pct": 0.0
+      },
+      "200": {
+        "hit_rate_pct": 28.3,
+        "per_split_all6_count": {
+          "0": 3,
+          "1": 1,
+          "2": 3,
+          "3": 0,
+          "4": 1,
+          "5": 1,
+          "6": 3,
+          "7": 1,
+          "8": 2,
+          "9": 2
+        },
+        "all6_pct": 0.0
+      },
+      "500": {
+        "hit_rate_pct": 56.7,
+        "per_split_all6_count": {
+          "0": 2,
+          "1": 6,
+          "2": 6,
+          "3": 3,
+          "4": 3,
+          "5": 2,
+          "6": 3,
+          "7": 3,
+          "8": 3,
+          "9": 3
+        },
+        "all6_pct": 20.0
+      },
+      "1000": {
+        "hit_rate_pct": 80.0,
+        "per_split_all6_count": {
+          "0": 4,
+          "1": 3,
+          "2": 6,
+          "3": 6,
+          "4": 6,
+          "5": 6,
+          "6": 2,
+          "7": 4,
+          "8": 5,
+          "9": 6
+        },
+        "all6_pct": 50.0
+      },
+      "2000": {
+        "hit_rate_pct": 95.0,
+        "per_split_all6_count": {
+          "0": 5,
+          "1": 6,
+          "2": 6,
+          "3": 6,
+          "4": 6,
+          "5": 6,
+          "6": 5,
+          "7": 5,
+          "8": 6,
+          "9": 6
+        },
+        "all6_pct": 70.0
+      },
+      "5000": {
+        "hit_rate_pct": 100.0,
+        "per_split_all6_count": {
+          "0": 6,
+          "1": 6,
+          "2": 6,
+          "3": 6,
+          "4": 6,
+          "5": 6,
+          "6": 6,
+          "7": 6,
+          "8": 6,
+          "9": 6
+        },
+        "all6_pct": 100.0
+      }
+    },
+    "min_stable_per_rep": [
+      5000,
+      500,
+      500,
+      1000,
+      1000,
+      1000,
+      5000,
+      5000,
+      2000,
+      1000
+    ],
+    "min_stable_label": [
+      "5000",
+      "500",
+      "500",
+      "1000",
+      "1000",
+      "1000",
+      "5000",
+      "5000",
+      "2000",
+      "1000"
+    ],
+    "cumulative_pct_reached_by_size": {
+      "100": 0.0,
+      "200": 0.0,
+      "500": 20.0,
+      "1000": 60.0,
+      "2000": 70.0,
+      "5000": 100.0
+    },
+    "note": "per_size.all6_pct = fraction of the ten outer splits whose SIX sub-updates were all stable at that size; cumulative_pct_reached_by_size = fraction of splits that had reached 6/6 by that size (one value per split, not repeated across sizes)."
+  },
+  "subgroup_race": {
+    "coding": "MIMIC/eICU convention: 1=White, 2=Black, 3=Other; carried from the redistributed files",
+    "rows": {
+      "eICU:White": {
+        "cohort": "eICU",
+        "race": "White",
+        "n": 10806,
+        "deaths": 1468,
+        "AUC": 0.678,
+        "slope": 0.41,
+        "OE": 0.65
+      },
+      "eICU:Black": {
+        "cohort": "eICU",
+        "race": "Black",
+        "n": 2785,
+        "deaths": 287,
+        "AUC": 0.715,
+        "slope": 0.51,
+        "OE": 0.64
+      },
+      "eICU:Other": {
+        "cohort": "eICU",
+        "race": "Other",
+        "n": 837,
+        "deaths": 97,
+        "AUC": 0.722,
+        "slope": 0.51,
+        "OE": 0.62
+      },
+      "MIMIC-IV:White": {
+        "cohort": "MIMIC-IV",
+        "race": "White",
+        "n": 11056,
+        "deaths": 1340,
+        "AUC": 0.766,
+        "slope": 1.01,
+        "OE": 0.95
+      },
+      "MIMIC-IV:Black": {
+        "cohort": "MIMIC-IV",
+        "race": "Black",
+        "n": 2124,
+        "deaths": 215,
+        "AUC": 0.792,
+        "slope": 1.08,
+        "OE": 0.9
+      },
+      "MIMIC-IV:Other": {
+        "cohort": "MIMIC-IV",
+        "race": "Other",
+        "n": 2803,
+        "deaths": 433,
+        "AUC": 0.771,
+        "slope": 0.96,
+        "OE": 1.28
+      }
+    },
+    "note": "Descriptive subgroup estimates from the frozen transported model; no per-stratum CI and no interaction test."
+  },
+  "hf_marker_sensitivity_MIMICIII_APPARENT": {
+    "status": "APPARENT / in-sample performance, not held-out; shown to quantify what the harmonised 21-variable model forgoes",
+    "base_AUC": 0.7482,
+    "plus_NTproBNP_EF_AUC": 0.7961,
+    "n_marker_missing_pct": {
+      "NT-proBNP": 0.0,
+      "EF": 0.0
+    },
+    "delta_AUC": 0.0479
+  },
+  "missingness_all_cohorts": {
+    "MIMIC-IV": {
+      "rows_with_any_missing": 0,
+      "n_complete_pct": 100.0,
+      "per_variable_missing_rows": "none"
+    },
+    "eICU-CRD": {
+      "rows_with_any_missing": 0,
+      "n_complete_pct": 100.0,
+      "per_variable_missing_rows": "none"
+    },
+    "MIMIC-III": {
+      "rows_with_any_missing": 21,
+      "n_complete_pct": 98.2,
+      "per_variable_missing_rows": {
+        "HeartRate": 12,
+        "RespiratoryRate": 12,
+        "Temperature": 18,
+        "SBP": 15
+      }
+    }
+  },
+  "cohort_summary": {
+    "MIMIC-IV": {
+      "stays": 15983,
+      "deaths": 1988,
+      "mortality_pct": 12.4,
+      "age_mean": 72.9,
+      "age_sd": 13.4,
+      "male_pct": 54.6,
+      "female_pct": 45.4
+    },
+    "eICU-CRD": {
+      "stays": 14428,
+      "deaths": 1852,
+      "mortality_pct": 12.8,
+      "age_mean": 70.3,
+      "age_sd": 13.8,
+      "male_pct": 52.4,
+      "female_pct": 47.6
+    },
+    "MIMIC-III": {
+      "stays": 1176,
+      "deaths": 159,
+      "mortality_pct": 13.5,
+      "age_mean": 74.0,
+      "age_sd": 13.4,
+      "male_pct": 47.4,
+      "female_pct": 52.6
+    }
+  },
+  "participant_characteristics": {
+    "columns": "mean (SD) for continuous, n (%) for binary; SMD = absolute standardised mean difference, eICU-CRD vs MIMIC-IV",
+    "rows": [
+      {
+        "variable": "Age",
+        "type": "continuous",
+        "MIMIC-IV": "72.9 (13.4)",
+        "MIMIC-IV_num": 72.8777,
+        "MIMIC-IV_n": 15983,
+        "eICU-CRD": "70.3 (13.8)",
+        "eICU-CRD_num": 70.3321,
+        "eICU-CRD_n": 14428,
+        "MIMIC-III": "74.0 (13.4)",
+        "MIMIC-III_num": 74.0476,
+        "MIMIC-III_n": 1176,
+        "SMD_vs_development": 0.1866
+      },
+      {
+        "variable": "male",
+        "type": "binary",
+        "MIMIC-IV": "54.6% (8733)",
+        "MIMIC-IV_num": 0.5464,
+        "MIMIC-IV_n": 15983,
+        "eICU-CRD": "52.4% (7562)",
+        "eICU-CRD_num": 0.5241,
+        "eICU-CRD_n": 14428,
+        "MIMIC-III": "47.4% (558)",
+        "MIMIC-III_num": 0.4745,
+        "MIMIC-III_n": 1176,
+        "SMD_vs_development": 0.0447
+      },
+      {
+        "variable": "HeartRate",
+        "type": "continuous",
+        "MIMIC-IV": "84.2 (16.0)",
+        "MIMIC-IV_num": 84.1739,
+        "MIMIC-IV_n": 15983,
+        "eICU-CRD": "99.8 (30.7)",
+        "eICU-CRD_num": 99.8454,
+        "eICU-CRD_n": 14428,
+        "MIMIC-III": "84.6 (16.0)",
+        "MIMIC-III_num": 84.5758,
+        "MIMIC-III_n": 1164,
+        "SMD_vs_development": 0.6406
+      },
+      {
+        "variable": "RespiratoryRate",
+        "type": "continuous",
+        "MIMIC-IV": "19.9 (3.8)",
+        "MIMIC-IV_num": 19.9325,
+        "MIMIC-IV_n": 15983,
+        "eICU-CRD": "27.6 (14.2)",
+        "eICU-CRD_num": 27.613,
+        "eICU-CRD_n": 14428,
+        "MIMIC-III": "20.8 (4.0)",
+        "MIMIC-III_num": 20.8015,
+        "MIMIC-III_n": 1164,
+        "SMD_vs_development": 0.7392
+      },
+      {
+        "variable": "Temperature",
+        "type": "continuous",
+        "MIMIC-IV": "36.7 (0.5)",
+        "MIMIC-IV_num": 36.7465,
+        "MIMIC-IV_n": 15983,
+        "eICU-CRD": "36.4 (0.9)",
+        "eICU-CRD_num": 36.3627,
+        "eICU-CRD_n": 14428,
+        "MIMIC-III": "36.7 (0.6)",
+        "MIMIC-III_num": 36.6773,
+        "MIMIC-III_n": 1158,
+        "SMD_vs_development": 0.525
+      },
+      {
+        "variable": "SBP",
+        "type": "continuous",
+        "MIMIC-IV": "116.2 (17.0)",
+        "MIMIC-IV_num": 116.1951,
+        "MIMIC-IV_n": 15983,
+        "eICU-CRD": "121.0 (27.8)",
+        "eICU-CRD_num": 120.9712,
+        "eICU-CRD_n": 14428,
+        "MIMIC-III": "118.0 (17.4)",
+        "MIMIC-III_num": 117.995,
+        "MIMIC-III_n": 1161,
+        "SMD_vs_development": 0.2072
+      },
+      {
+        "variable": "AG",
+        "type": "continuous",
+        "MIMIC-IV": "15.3 (4.4)",
+        "MIMIC-IV_num": 15.2744,
+        "MIMIC-IV_n": 15983,
+        "eICU-CRD": "11.3 (4.7)",
+        "eICU-CRD_num": 11.2559,
+        "eICU-CRD_n": 14428,
+        "MIMIC-III": "13.9 (2.7)",
+        "MIMIC-III_num": 13.9238,
+        "MIMIC-III_n": 1176,
+        "SMD_vs_development": 0.8875
+      },
+      {
+        "variable": "BUN",
+        "type": "continuous",
+        "MIMIC-IV": "36.4 (25.9)",
+        "MIMIC-IV_num": 36.3904,
+        "MIMIC-IV_n": 15983,
+        "eICU-CRD": "36.0 (23.4)",
+        "eICU-CRD_num": 36.0274,
+        "eICU-CRD_n": 14428,
+        "MIMIC-III": "36.3 (21.9)",
+        "MIMIC-III_num": 36.2936,
+        "MIMIC-III_n": 1176,
+        "SMD_vs_development": 0.0147
+      },
+      {
+        "variable": "Creatinine",
+        "type": "continuous",
+        "MIMIC-IV": "1.9 (1.8)",
+        "MIMIC-IV_num": 1.9024,
+        "MIMIC-IV_n": 15983,
+        "eICU-CRD": "2.0 (1.9)",
+        "eICU-CRD_num": 1.9818,
+        "eICU-CRD_n": 14428,
+        "MIMIC-III": "1.6 (1.3)",
+        "MIMIC-III_num": 1.6407,
+        "MIMIC-III_n": 1176,
+        "SMD_vs_development": 0.0432
+      },
+      {
+        "variable": "Chloride",
+        "type": "continuous",
+        "MIMIC-IV": "102.2 (7.0)",
+        "MIMIC-IV_num": 102.1717,
+        "MIMIC-IV_n": 15983,
+        "eICU-CRD": "101.1 (6.6)",
+        "eICU-CRD_num": 101.1175,
+        "eICU-CRD_n": 14428,
+        "MIMIC-III": "102.3 (5.3)",
+        "MIMIC-III_num": 102.292,
+        "MIMIC-III_n": 1176,
+        "SMD_vs_development": 0.1548
+      },
+      {
+        "variable": "MCH",
+        "type": "continuous",
+        "MIMIC-IV": "29.5 (2.8)",
+        "MIMIC-IV_num": 29.5414,
+        "MIMIC-IV_n": 15983,
+        "eICU-CRD": "29.3 (2.8)",
+        "eICU-CRD_num": 29.2644,
+        "eICU-CRD_n": 14428,
+        "MIMIC-III": "29.5 (2.6)",
+        "MIMIC-III_num": 29.5398,
+        "MIMIC-III_n": 1176,
+        "SMD_vs_development": 0.0992
+      },
+      {
+        "variable": "MCHC",
+        "type": "continuous",
+        "MIMIC-IV": "32.3 (1.7)",
+        "MIMIC-IV_num": 32.3022,
+        "MIMIC-IV_n": 15983,
+        "eICU-CRD": "32.3 (1.5)",
+        "eICU-CRD_num": 32.3206,
+        "eICU-CRD_n": 14428,
+        "MIMIC-III": "32.9 (1.4)",
+        "MIMIC-III_num": 32.8646,
+        "MIMIC-III_n": 1176,
+        "SMD_vs_development": 0.0113
+      },
+      {
+        "variable": "MCV",
+        "type": "continuous",
+        "MIMIC-IV": "91.5 (7.4)",
+        "MIMIC-IV_num": 91.5115,
+        "MIMIC-IV_n": 15983,
+        "eICU-CRD": "90.5 (7.5)",
+        "eICU-CRD_num": 90.541,
+        "eICU-CRD_n": 14428,
+        "MIMIC-III": "89.9 (6.5)",
+        "MIMIC-III_num": 89.9026,
+        "MIMIC-III_n": 1176,
+        "SMD_vs_development": 0.13
+      },
+      {
+        "variable": "Platelet",
+        "type": "continuous",
+        "MIMIC-IV": "209.2 (101.8)",
+        "MIMIC-IV_num": 209.163,
+        "MIMIC-IV_n": 15983,
+        "eICU-CRD": "214.7 (99.9)",
+        "eICU-CRD_num": 214.7134,
+        "eICU-CRD_n": 14428,
+        "MIMIC-III": "241.5 (113.2)",
+        "MIMIC-III_num": 241.5175,
+        "MIMIC-III_n": 1176,
+        "SMD_vs_development": 0.055
+      },
+      {
+        "variable": "Potassium",
+        "type": "continuous",
+        "MIMIC-IV": "4.3 (0.8)",
+        "MIMIC-IV_num": 4.3256,
+        "MIMIC-IV_n": 15983,
+        "eICU-CRD": "4.2 (0.7)",
+        "eICU-CRD_num": 4.2322,
+        "eICU-CRD_n": 14428,
+        "MIMIC-III": "4.2 (0.4)",
+        "MIMIC-III_num": 4.1764,
+        "MIMIC-III_n": 1176,
+        "SMD_vs_development": 0.1222
+      },
+      {
+        "variable": "RBC",
+        "type": "continuous",
+        "MIMIC-IV": "3.5 (0.8)",
+        "MIMIC-IV_num": 3.4853,
+        "MIMIC-IV_n": 15983,
+        "eICU-CRD": "3.8 (0.8)",
+        "eICU-CRD_num": 3.8122,
+        "eICU-CRD_n": 14428,
+        "MIMIC-III": "3.6 (0.6)",
+        "MIMIC-III_num": 3.5747,
+        "MIMIC-III_n": 1176,
+        "SMD_vs_development": 0.4187
+      },
+      {
+        "variable": "RDW",
+        "type": "continuous",
+        "MIMIC-IV": "15.8 (2.4)",
+        "MIMIC-IV_num": 15.813,
+        "MIMIC-IV_n": 15983,
+        "eICU-CRD": "16.2 (2.6)",
+        "eICU-CRD_num": 16.2342,
+        "eICU-CRD_n": 14428,
+        "MIMIC-III": "16.0 (2.1)",
+        "MIMIC-III_num": 15.9529,
+        "MIMIC-III_n": 1176,
+        "SMD_vs_development": 0.1705
+      },
+      {
+        "variable": "Sodium",
+        "type": "continuous",
+        "MIMIC-IV": "138.1 (5.3)",
+        "MIMIC-IV_num": 138.111,
+        "MIMIC-IV_n": 15983,
+        "eICU-CRD": "137.7 (5.5)",
+        "eICU-CRD_num": 137.6998,
+        "eICU-CRD_n": 14428,
+        "MIMIC-III": "138.9 (4.1)",
+        "MIMIC-III_num": 138.897,
+        "MIMIC-III_n": 1176,
+        "SMD_vs_development": 0.0761
+      },
+      {
+        "variable": "WBC",
+        "type": "continuous",
+        "MIMIC-IV": "11.9 (8.7)",
+        "MIMIC-IV_num": 11.917,
+        "MIMIC-IV_n": 15983,
+        "eICU-CRD": "11.3 (8.2)",
+        "eICU-CRD_num": 11.3311,
+        "eICU-CRD_n": 14428,
+        "MIMIC-III": "10.7 (5.2)",
+        "MIMIC-III_num": 10.715,
+        "MIMIC-III_n": 1176,
+        "SMD_vs_development": 0.0695
+      },
+      {
+        "variable": "COPD",
+        "type": "binary",
+        "MIMIC-IV": "39.5% (6309)",
+        "MIMIC-IV_num": 0.3947,
+        "MIMIC-IV_n": 15983,
+        "eICU-CRD": "20.9% (3012)",
+        "eICU-CRD_num": 0.2088,
+        "eICU-CRD_n": 14428,
+        "MIMIC-III": "7.6% (89)",
+        "MIMIC-III_num": 0.0757,
+        "MIMIC-III_n": 1176,
+        "SMD_vs_development": 0.4137
+      },
+      {
+        "variable": "Diabetes",
+        "type": "binary",
+        "MIMIC-IV": "44.2% (7063)",
+        "MIMIC-IV_num": 0.4419,
+        "MIMIC-IV_n": 15983,
+        "eICU-CRD": "31.4% (4532)",
+        "eICU-CRD_num": 0.3141,
+        "eICU-CRD_n": 14428,
+        "MIMIC-III": "42.1% (495)",
+        "MIMIC-III_num": 0.4209,
+        "MIMIC-III_n": 1176,
+        "SMD_vs_development": 0.2659
+      }
+    ]
+  },
+  "decision_curves_0.05_0.25": {
+    "n_boot": 0,
+    "test_n": 7214,
+    "grid_min": 0.05,
+    "grid_max": 0.25,
+    "grid_step": 0.001,
+    "frozen_nonpositive_from": 0.235,
+    "recalibrate_ge_frozen_everywhere": false,
+    "recalibrate_below_frozen_band": [
+      0.077,
+      0.109
+    ],
+    "max_abs_recal_minus_frozen_in_band": 0.00157,
+    "note": "Where recalibrated net benefit falls below the frozen model the deficit is smaller than 5e-3 throughout, i.e. of the same order as the sampling noise of a single held-out split; no crossover changes sign outside that band."
+  },
+  "tail_imbalance_raw_and_sd": {
+    "note": "raw = weighted-eICU minus MIMIC-IV quantile on the original scale; sd_units = raw divided by the MIMIC-IV SD of that variable",
+    "variables": {
+      "HeartRate": {
+        "p10_raw": -19.0,
+        "p10_sd_units": -1.187,
+        "p50_raw": 7.0,
+        "p50_sd_units": 0.437,
+        "p90_raw": 17.0,
+        "p90_sd_units": 1.062,
+        "mimic_iv_sd_used": 16.012
+      },
+      "RespiratoryRate": {
+        "p10_raw": -11.0,
+        "p10_sd_units": -2.912,
+        "p50_raw": -6.0,
+        "p50_sd_units": -1.589,
+        "p90_raw": 11.0,
+        "p90_sd_units": 2.912,
+        "mimic_iv_sd_used": 3.777
+      },
+      "Age": {
+        "p10_raw": -1.0,
+        "p10_sd_units": -0.074,
+        "p50_raw": -2.0,
+        "p50_sd_units": -0.149,
+        "p90_raw": -2.0,
+        "p90_sd_units": -0.149,
+        "mimic_iv_sd_used": 13.446
+      },
+      "AG": {
+        "p10_raw": -1.0,
+        "p10_sd_units": -0.229,
+        "p50_raw": -0.3,
+        "p50_sd_units": -0.069,
+        "p90_raw": 1.315,
+        "p90_sd_units": 0.301,
+        "mimic_iv_sd_used": 4.365
+      },
+      "RBC": {
+        "p10_raw": 0.14,
+        "p10_sd_units": 0.185,
+        "p50_raw": 0.07,
+        "p50_sd_units": 0.092,
+        "p90_raw": 0.12,
+        "p90_sd_units": 0.159,
+        "mimic_iv_sd_used": 0.757
+      },
+      "COPD": {
+        "p10_raw": 0.0,
+        "p10_sd_units": 0.0,
+        "p50_raw": 0.0,
+        "p50_sd_units": 0.0,
+        "p90_raw": 0.0,
+        "p90_sd_units": 0.0,
+        "mimic_iv_sd_used": 0.489
+      }
+    }
+  }
+}

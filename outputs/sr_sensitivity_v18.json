@@ -1,0 +1,8 @@
+{
+  "note": "APPARENT (in-sample, resubstitution) performance only: the added biomarkers and the 21 model covariates are fitted and scored on the SAME MIMIC-III rows, with no held-out data. This therefore OVERSTATES performance and must not be read as a validated increment. It is reported solely to quantify what the deliberately cross-database-intersected 21-variable model omits: the heart-failure-specific markers that exist in only the MIMIC-III file.",
+  "estimand": "apparent resubstitution AUC on the MIMIC-III exploratory cohort",
+  "n": 1176,
+  "MIMIC_III_base_21": 0.7933,
+  "MIMIC_III_plus_NTproBNP_EF": 0.7961,
+  "delta_apparent_AUC": 0.0028
+}

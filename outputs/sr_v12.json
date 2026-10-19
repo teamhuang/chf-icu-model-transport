@@ -1,0 +1,170 @@
+{
+  "penalised_recalibration_sensitivity": {
+    "100": {
+      "heldout_median_unpen": 1.009,
+      "heldout_max_unpen": 17.7,
+      "heldout_neg_unpen": 1,
+      "heldout_median_robust": 0.742,
+      "heldout_max_robust": 2.68,
+      "heldout_neg_robust": 0
+    },
+    "200": {
+      "heldout_median_unpen": 1.059,
+      "heldout_max_unpen": 15.33,
+      "heldout_neg_unpen": 0,
+      "heldout_median_robust": 0.904,
+      "heldout_max_robust": 3.26,
+      "heldout_neg_robust": 0
+    },
+    "500": {
+      "heldout_median_unpen": 1.043,
+      "heldout_max_unpen": 2.62,
+      "heldout_neg_unpen": 0,
+      "heldout_median_robust": 0.967,
+      "heldout_max_robust": 1.99,
+      "heldout_neg_robust": 0
+    },
+    "1000": {
+      "heldout_median_unpen": 1.056,
+      "heldout_max_unpen": 1.62,
+      "heldout_neg_unpen": 0,
+      "heldout_median_robust": 1.013,
+      "heldout_max_robust": 1.52,
+      "heldout_neg_robust": 0
+    },
+    "2000": {
+      "heldout_median_unpen": 1.027,
+      "heldout_max_unpen": 1.31,
+      "heldout_neg_unpen": 0,
+      "heldout_median_robust": 1.009,
+      "heldout_max_robust": 1.28,
+      "heldout_neg_robust": 0
+    },
+    "5000": {
+      "heldout_median_unpen": 1.032,
+      "heldout_max_unpen": 1.17,
+      "heldout_neg_unpen": 0,
+      "heldout_median_robust": 1.024,
+      "heldout_max_robust": 1.16,
+      "heldout_neg_robust": 0
+    }
+  },
+  "extreme_slope_events": {
+    "100": {
+      "n_extreme_or_neg": 6,
+      "median_events_extreme": 12.5,
+      "median_events_all": 12.0
+    },
+    "200": {
+      "n_extreme_or_neg": 5,
+      "median_events_extreme": 24.0,
+      "median_events_all": 26.0
+    },
+    "500": {
+      "n_extreme_or_neg": 1,
+      "median_events_extreme": 59.0,
+      "median_events_all": 63.5
+    },
+    "1000": {
+      "n_extreme_or_neg": 0,
+      "median_events_extreme": null,
+      "median_events_all": 131.0
+    },
+    "2000": {
+      "n_extreme_or_neg": 0,
+      "median_events_extreme": null,
+      "median_events_all": 257.0
+    },
+    "5000": {
+      "n_extreme_or_neg": 0,
+      "median_events_extreme": null,
+      "median_events_all": 647.0
+    }
+  },
+  "table4_with_calibration": [
+    {
+      "Model": "Frozen 21-var",
+      "AUC": 0.6969,
+      "Brier": 0.1216,
+      "slope": 0.455,
+      "OE": 0.628
+    },
+    {
+      "Model": "Two-parameter recalibration",
+      "AUC": 0.6969,
+      "Brier": 0.1014,
+      "slope": 1.107,
+      "OE": 0.949
+    },
+    {
+      "Model": "SOFA (refit)",
+      "AUC": 0.7287,
+      "Brier": 0.1001,
+      "slope": 1.13,
+      "OE": 0.937
+    },
+    {
+      "Model": "APS-III (refit)",
+      "AUC": 0.7008,
+      "Brier": 0.1035,
+      "slope": 0.998,
+      "OE": 0.931
+    },
+    {
+      "Model": "SOFA+APS-III (refit)",
+      "AUC": 0.7482,
+      "Brier": 0.0971,
+      "slope": 1.1,
+      "OE": 0.933
+    },
+    {
+      "Model": "21-var refit",
+      "AUC": 0.7523,
+      "Brier": 0.0973,
+      "slope": 1.079,
+      "OE": 0.954
+    }
+  ],
+  "subgroup_frozen_eICU": [
+    {
+      "subgroup": "Sex: male",
+      "n": 7562,
+      "deaths": 990,
+      "AUC": 0.693,
+      "slope": 0.43,
+      "OE": 0.67
+    },
+    {
+      "subgroup": "Sex: female",
+      "n": 6866,
+      "deaths": 862,
+      "AUC": 0.685,
+      "slope": 0.43,
+      "OE": 0.62
+    },
+    {
+      "subgroup": "Age tertile 1 (youngest)",
+      "n": 4887,
+      "deaths": 433,
+      "AUC": 0.698,
+      "slope": 0.48,
+      "OE": 0.61
+    },
+    {
+      "subgroup": "Age tertile 2",
+      "n": 4856,
+      "deaths": 616,
+      "AUC": 0.675,
+      "slope": 0.41,
+      "OE": 0.65
+    },
+    {
+      "subgroup": "Age tertile 3 (oldest)",
+      "n": 4685,
+      "deaths": 803,
+      "AUC": 0.659,
+      "slope": 0.37,
+      "OE": 0.66
+    }
+  ]
+}

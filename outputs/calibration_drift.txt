@@ -1,0 +1,53 @@
+== CALIBRATION DRIFT ==
+(calibration intercept: 0 = perfect; slope: 1 = perfect; O/E: observed/expected events)
+
+B_MIMIC-IV (fit)             n=15983 deaths=1988  intercept=-0.001  slope=1.000  O/E=1.000  AUC=0.769  Brier=0.093
+A_MIMIC-III (temporal-ext)   n= 1176 deaths= 159  intercept=+0.528  slope=1.087  O/E=1.328  AUC=0.748  Brier=0.102
+V_eICU (geographic-ext)      n=14428 deaths=1852  intercept=-1.223  slope=0.432  O/E=0.644  AUC=0.689  Brier=0.126
+
+== MODEL UPDATING STRATEGIES ==
+     Cohort         Strategy    AUC  AUC_gain_vs_frozen  Brier  CalibIntercept  CalibSlope  CalibOE                          Info
+A_MIMIC-III        unchanged 0.7482              0.0000 0.1016          0.5279      1.0865   1.3283                frozen B model
+A_MIMIC-III intercept_update 0.7482              0.0000 0.0999         -0.0456      1.0862   0.8797        intercept_shift=+0.528
+A_MIMIC-III      recalibrate 0.7482              0.0000 0.0992          0.0023      1.0015   0.9999 slope=1.087, intercept=+0.528
+A_MIMIC-III            refit 0.7933              0.0451 0.0905          0.0082      1.0056   0.9998      B-refit on target cohort
+     V_eICU        unchanged 0.6890              0.0000 0.1256         -1.2235      0.4319   0.6441                frozen B model
+     V_eICU intercept_update 0.6890              0.0000 0.1081         -0.6950      0.4319   1.4135        intercept_shift=-1.223
+     V_eICU      recalibrate 0.6890              0.0000 0.1044         -0.0017      0.9989   1.0001 slope=0.432, intercept=-1.223
+     V_eICU            refit 0.7504              0.0613 0.0995         -0.0013      0.9996   0.9997      B-refit on target cohort
+
+== BASELINE SEVERITY SCORES ==
+     Cohort                              Model    AUC
+A_MIMIC-III                Frozen 21-var model 0.7482
+     V_eICU                Frozen 21-var model 0.6890
+ B_MIMIC-IV                Frozen 21-var model 0.7689
+ B_MIMIC-IV   SOFA alone (cohort-specific fit) 0.7269
+ B_MIMIC-IV APSIII alone (cohort-specific fit) 0.8312
+     V_eICU   SOFA alone (cohort-specific fit) 0.7121
+     V_eICU APSIII alone (cohort-specific fit) 0.6978
+
+== VARIABLE DISTRIBUTION SHIFT (SMD) ==
+       Variable  SMD_BvsA  SMD_BvsV
+             AG    0.3739    0.8875
+         APSIII       NaN    0.0747
+            Age    0.0870    0.1866
+            BUN    0.0040    0.0147
+           COPD    0.3191    0.1860
+       Chloride    0.0194    0.1548
+     Creatinine    0.1687    0.0432
+       Diabetes    0.0210    0.1278
+      HeartRate    0.0251    0.6406
+            MCH    0.0006    0.0992
+           MCHC    0.3569    0.0113
+            MCV    0.2300    0.1300
+       Platelet    0.3007    0.0550
+      Potassium    0.2377    0.1222
+            RBC    0.1286    0.4187
+            RDW    0.0620    0.1705
+RespiratoryRate    0.2233    0.7392
+            SBP    0.1047    0.2072
+           SOFA       NaN    0.6979
+         Sodium    0.1644    0.0761
+    Temperature    0.1237    0.5250
+            WBC    0.1678    0.0695
+           male    0.0719    0.0223

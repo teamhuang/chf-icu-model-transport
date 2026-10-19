@@ -1,0 +1,44 @@
+# Reproducible environment — analysis build 2026-10-12.r18
+# Python 3.10.5 (64-bit). Versions captured from the run that produced
+# outputs/sr_v18.json and outputs/SCI_manuscript_v18.md.
+numpy==1.26.4
+pandas==2.2.2
+scipy==1.14.1
+scikit-learn==1.5.1
+matplotlib==3.8.4
+
+# ---------------------------------------------------------------------------
+# Run order from the project root. Each numbered step is required: the reported
+# numbers are spread across these generators, and several of them (notably the
+# outer-split resampling interval, the held-out severity benchmark, the
+# regularisation sensitivity and the released model specification) are NOT
+# produced by analysis_v5.py alone.
+# ---------------------------------------------------------------------------
+#   pip install -r requirements.txt
+#
+#   1. python scripts/analysis_v5.py            -> outputs/v5_results.json, v5_*.csv
+#   2. python scripts/08_v6.py                 -> outputs/v6_results.json, v6_smd_by_variable.csv
+#   3. python scripts/09_v7_inference.py        -> outputs/v7_inference.json (outer-split interval)
+#   4. python scripts/11_v8_heldout_bench.py    -> outputs/v8_heldout.json (SOFA/APS-III benchmark)
+#   5. python scripts/13_v9_sensitivity.py      -> outputs/sr_sens_v9.json (tolerance grid, weights, paired bootstrap)
+#   6. python scripts/15_v10_diagnostics.py     -> outputs/sr_diag_v10.json (slope/event diagnostics)
+#   7. python scripts/17_v12_diagnostics.py     -> outputs/sr_v12.json (S13, S12, S16 inputs)
+#   8. python scripts/19_v13_model_spec.py      -> outputs/model_specification.{csv,json}
+#   9. python scripts/26_v18_diagnostics.py     -> outputs/sr_v18.json, sr_v18_dca.csv   [NEW in r18]
+#  10. python scripts/27_v18_figs.py            -> figures/v18_fig*.png|pdf            [NEW in r18]
+#  11. python scripts/29_v18_supp.py            -> outputs/SUPPLEMENT_v18.md            [NEW in r18]
+#  12. python scripts/30_v18_tripod.py          -> outputs/SUPPLEMENT_TRIPOD_AI_v18.md  [NEW in r18]
+#  13. python scripts/28_finalize_v18.py         -> outputs/SCI_manuscript_v18.md
+#  14. python scripts/md_to_docx_sr.mjs <in> <out>  (node; renders the Word submission copy)
+#  15. python scripts/audit_consistency_v18.py  -> RESULT: PASS (exit 0)
+#  16. python scripts/24_reproduce_all_v16.py   -> REPRODUCIBLE-AND-CONSISTENT (double run, SHA-256)
+#
+# NOT part of the reported pipeline, retained for provenance only:
+#   scripts/01-07, 20, 21, 22, 23 are earlier-stage/exploratory scripts. 05 and 06 in
+#   particular contain two defects that were found and fixed in analysis_v5.py (inverted
+#   inverse-probability weights; a double-counted minimum-stable-size tally). They must
+#   NOT be used to reproduce any reported number and are excluded from the deposit.
+#   Figure 1 is a study-design roadmap supplied by the authors as PNG/技术路线图.png
+#   rather than generated here; scripts/22_v15_fig1_roadmap.py produces a vector
+#   alternative.
+# ---------------------------------------------------------------------------

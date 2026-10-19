@@ -1,0 +1,15 @@
+THIRD EXTERNAL VALIDATION — eICU Collaborative Research Database cohort
+(geographically distinct: 208 hospitals, no MIMIC patient overlap)
+
+B_MIMIC-IV (fit)          n=15983 deaths=1988 (12.4%)  AUC=0.769 [95%CI 0.758-0.780]  Brier=0.093 [95%CI 0.090-0.096]
+A_MIMIC-III (external)    n= 1176 deaths= 159 (13.5%)  AUC=0.748 [95%CI 0.707-0.794]  Brier=0.102 [95%CI 0.089-0.114]
+V_eICU (external-geo)     n=14428 deaths=1852 (12.8%)  AUC=0.689 [95%CI 0.675-0.703]  Brier=0.126 [95%CI 0.122-0.129]
+
+Sensitivity analyses (AUC, in-sample where noted):
+A_MIMIC-III   Base (21 vars)                         0.748
+A_MIMIC-III   Base + NT-proBNP + LVEF                0.796
+A_MIMIC-III   Apparent (cohort-specific fit, 21 vars) 0.793
+B_MIMIC-IV    Base (21 vars, in-sample)              0.769
+B_MIMIC-IV    Base + SOFA + APSIII (in-sample)       0.868
+V_eICU        Base (21 vars, in-sample)              (see table)
+V_eICU        Base + SOFA + APSIII (in-sample)       0.795

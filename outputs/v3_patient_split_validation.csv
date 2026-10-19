@@ -1,0 +1,3 @@
+Strategy,AUC,Brier,CalibSlope,CalibIntercept,O_E
+frozen_MIMIC-IV,0.697,0.1259,0.4512,-1.1684,0.6612
+recalibrated_on_eICU_split,0.697,0.1063,1.0905,0.2255,1.0539

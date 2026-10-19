@@ -1,0 +1,52 @@
+{
+  "note": "A model calibrated on a dataset where its linear predictor is UNDER-dispersed transports with slope approximately SD_lp(development)/SD_lp(target). This is a mechanical, covariate-free component of the slope failure and a competing explanation to case-mix or definition heterogeneity.",
+  "per_cohort": {
+    "MIMIC-IV": {
+      "n": 15983,
+      "lp_mean": -2.33896342658026,
+      "lp_sd": 1.0723906037210584,
+      "lp_iqr": 1.3858492755661855,
+      "lp_p05": -3.9794932238456004,
+      "lp_p95": -0.5031235294832244
+    },
+    "MIMIC-III": {
+      "n": 1176,
+      "lp_mean": -2.5216624951566735,
+      "lp_sd": 0.9656249383329076,
+      "lp_iqr": 1.268127690754322,
+      "lp_p05": -4.075340498892468,
+      "lp_p95": -0.9204094628731898
+    },
+    "eICU-CRD": {
+      "n": 14428,
+      "lp_mean": -2.036359674284148,
+      "lp_sd": 1.6880233385954762,
+      "lp_iqr": 2.3173585442152755,
+      "lp_p05": -4.779439774389286,
+      "lp_p95": 0.752779106608052
+    }
+  },
+  "slope_prediction": {
+    "MIMIC-III": {
+      "lp_sd_ratio_target_over_dev": 0.9004414389517331,
+      "lp_sd_ratio_ci": [
+        0.8614411118350801,
+        0.9448746138742843
+      ],
+      "dispersion_predicted_slope": 1.1105663919290187,
+      "observed_slope": 1.0985,
+      "residual_observed_minus_predicted": -0.012066391929018705
+    },
+    "eICU-CRD": {
+      "lp_sd_ratio_target_over_dev": 1.5740750923574403,
+      "lp_sd_ratio_ci": [
+        1.5447450517377395,
+        1.601178878911721
+      ],
+      "dispersion_predicted_slope": 0.6352937066695675,
+      "observed_slope": 0.432,
+      "residual_observed_minus_predicted": -0.20329370666956753
+    }
+  },
+  "estimand": "calibration slope of the frozen study-refitted model on the logit scale"
+}

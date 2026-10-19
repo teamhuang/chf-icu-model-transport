@@ -1,0 +1,37 @@
+{
+  "heldout_same_split": {
+    "note": "All target-database scores fitted ONLY on the update half and evaluated on the identical held-out half (fair, no in-sample).",
+    "frozen_21var": {
+      "AUC": 0.6969,
+      "Brier": 0.1216
+    },
+    "recalibrated_2par": {
+      "AUC": 0.6969,
+      "Brier": 0.1014
+    },
+    "SOFA_only": {
+      "AUC": 0.7287,
+      "Brier": 0.1001
+    },
+    "APSIII_only": {
+      "AUC": 0.7008,
+      "Brier": 0.1035
+    },
+    "SOFA_APSIII": {
+      "AUC": 0.7482,
+      "Brier": 0.0971
+    },
+    "refit_21var": {
+      "AUC": 0.7523,
+      "Brier": 0.0973
+    }
+  },
+  "in_sample_apparent_CONTRAST": {
+    "note": "These are the values the manuscript previously quoted as 'cohort-fitted'; they are in-sample (apparent) and NOT held-out-fair.",
+    "B_SOFA": 0.7269,
+    "B_APSIII": 0.8312,
+    "V_SOFA": 0.7121,
+    "V_APSIII": 0.6978,
+    "V_SOFA_APSIII": 0.7338
+  }
+}

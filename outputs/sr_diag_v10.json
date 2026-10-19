@@ -1,0 +1,140 @@
+{
+  "slope_and_events": {
+    "100": {
+      "slope_median": 1.009,
+      "slope_q1": 0.771,
+      "slope_q3": 1.262,
+      "slope_min": -6.095,
+      "slope_max": 17.696,
+      "n_negative_slope": 1,
+      "n_slope_gt3": 2,
+      "events_median": 12.0,
+      "events_min": 6,
+      "events_max": 21,
+      "events_per_recalibration_parameter_median": 6.0
+    },
+    "200": {
+      "slope_median": 1.059,
+      "slope_q1": 0.827,
+      "slope_q3": 1.326,
+      "slope_min": 0.582,
+      "slope_max": 15.33,
+      "n_negative_slope": 0,
+      "n_slope_gt3": 1,
+      "events_median": 26.0,
+      "events_min": 18,
+      "events_max": 42,
+      "events_per_recalibration_parameter_median": 13.0
+    },
+    "500": {
+      "slope_median": 1.043,
+      "slope_q1": 0.949,
+      "slope_q3": 1.18,
+      "slope_min": 0.63,
+      "slope_max": 2.621,
+      "n_negative_slope": 0,
+      "n_slope_gt3": 0,
+      "events_median": 63.5,
+      "events_min": 46,
+      "events_max": 79,
+      "events_per_recalibration_parameter_median": 31.8
+    },
+    "1000": {
+      "slope_median": 1.056,
+      "slope_q1": 0.966,
+      "slope_q3": 1.161,
+      "slope_min": 0.869,
+      "slope_max": 1.616,
+      "n_negative_slope": 0,
+      "n_slope_gt3": 0,
+      "events_median": 131.0,
+      "events_min": 111,
+      "events_max": 151,
+      "events_per_recalibration_parameter_median": 65.5
+    },
+    "2000": {
+      "slope_median": 1.027,
+      "slope_q1": 0.96,
+      "slope_q3": 1.102,
+      "slope_min": 0.828,
+      "slope_max": 1.307,
+      "n_negative_slope": 0,
+      "n_slope_gt3": 0,
+      "events_median": 257.0,
+      "events_min": 228,
+      "events_max": 289,
+      "events_per_recalibration_parameter_median": 128.5
+    },
+    "5000": {
+      "slope_median": 1.032,
+      "slope_q1": 0.996,
+      "slope_q3": 1.065,
+      "slope_min": 0.937,
+      "slope_max": 1.167,
+      "n_negative_slope": 0,
+      "n_slope_gt3": 0,
+      "events_median": 647.0,
+      "events_min": 618,
+      "events_max": 681,
+      "events_per_recalibration_parameter_median": 323.5
+    }
+  },
+  "delta_auc_across10": {
+    "recal": {
+      "mean": 0.0,
+      "sd": 0.0,
+      "range": [
+        0.0,
+        0.0
+      ],
+      "label": "mean (SD) [range] over 10 correlated outer splits = conditional split-scheme variability, not a population 95% CI"
+    },
+    "sofa": {
+      "mean": 0.0219,
+      "sd": 0.0075,
+      "range": [
+        0.0111,
+        0.0361
+      ],
+      "label": "mean (SD) [range] over 10 correlated outer splits = conditional split-scheme variability, not a population 95% CI"
+    },
+    "aps3": {
+      "mean": 0.0071,
+      "sd": 0.0069,
+      "range": [
+        -0.0025,
+        0.0191
+      ],
+      "label": "mean (SD) [range] over 10 correlated outer splits = conditional split-scheme variability, not a population 95% CI"
+    },
+    "sofa_aps3": {
+      "mean": 0.0436,
+      "sd": 0.0063,
+      "range": [
+        0.032,
+        0.0513
+      ],
+      "label": "mean (SD) [range] over 10 correlated outer splits = conditional split-scheme variability, not a population 95% CI"
+    },
+    "refit": {
+      "mean": 0.0573,
+      "sd": 0.0042,
+      "range": [
+        0.0503,
+        0.0633
+      ],
+      "label": "mean (SD) [range] over 10 correlated outer splits = conditional split-scheme variability, not a population 95% CI"
+    }
+  },
+  "reweight_bootstrap_facts": {
+    "resamples_both_cohorts": true,
+    "recomputes_propensity_and_weights_each_replicate": true,
+    "re-estimates_weighted_slope_each_replicate": true,
+    "n_replicates": 200,
+    "weights_normalised": false,
+    "note": "both MIMIC-IV and eICU rows resampled; P(eICU|X) re-fit and weights truncated [0.1,10] and weighted IRLS slope re-estimated within each replicate; weights not renormalised (does not affect slope)."
+  },
+  "representative_split": {
+    "rule": "RandomState(2026).permutation(len(V)); first 50/50 split; fixed seed, chosen before inspecting results (deterministic, not selected on outcome)"
+  }
+}

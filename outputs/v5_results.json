@@ -1,0 +1,280 @@
+{
+  "meta": {
+    "seed": 2026,
+    "n_common_vars": 21,
+    "stability_rule": "|slope-1|<0.2 AND |O/E-1|<0.15"
+  },
+  "cohorts": {
+    "B": {
+      "n": 15983,
+      "deaths": 1988,
+      "prevalence": 0.1244
+    },
+    "A": {
+      "n": 1176,
+      "deaths": 159,
+      "prevalence": 0.1352
+    },
+    "V": {
+      "n": 14428,
+      "deaths": 1852,
+      "prevalence": 0.1284
+    }
+  },
+  "total_n": 31587,
+  "total_deaths": 3999,
+  "transport": {
+    "B_MIMIC-IV_insample": {
+      "n": 15983,
+      "deaths": 1988,
+      "AUC": 0.7689,
+      "AUC_CI": [
+        0.7586,
+        0.7814
+      ],
+      "Brier": 0.093,
+      "calib_slope": 1.0002,
+      "calib_intercept": 0.0001,
+      "OE": 0.9998
+    },
+    "A_MIMIC-III_temporal_exploratory": {
+      "n": 1176,
+      "deaths": 159,
+      "AUC": 0.7482,
+      "AUC_CI": [
+        0.7042,
+        0.7954
+      ],
+      "Brier": 0.1016,
+      "calib_slope": 1.0985,
+      "calib_intercept": 0.551,
+      "OE": 1.3283
+    },
+    "V_eICU_geographic_primary": {
+      "n": 14428,
+      "deaths": 1852,
+      "AUC": 0.689,
+      "AUC_CI": [
+        0.6766,
+        0.7027
+      ],
+      "Brier": 0.1256,
+      "calib_slope": 0.432,
+      "calib_intercept": -1.2233,
+      "OE": 0.6441
+    }
+  },
+  "patient_split_independent": {
+    "test_n": 7214,
+    "test_deaths": 900,
+    "frozen": {
+      "AUC": 0.6969,
+      "Brier": 0.1216,
+      "calib_slope": 0.4548,
+      "calib_intercept": -1.2279,
+      "OE": 0.6285
+    },
+    "recalibrated": {
+      "AUC": 0.6969,
+      "Brier": 0.1014,
+      "calib_slope": 1.1073,
+      "calib_intercept": 0.1213,
+      "OE": 0.9494
+    },
+    "recalib_slope_used": 0.4108,
+    "recalib_intercept_used": -1.2184,
+    "brier_rel_improvement_pct": 16.61
+  },
+  "repeated_curve": [
+    {
+      "n_pat": 100,
+      "slope_mean": 1.387,
+      "slope_sd": 2.603,
+      "OE_mean": 1.061,
+      "Brier_mean": 0.1052,
+      "stable_pct": 13.3,
+      "unstable_pct": 86.7
+    },
+    {
+      "n_pat": 200,
+      "slope_mean": 1.402,
+      "slope_sd": 1.887,
+      "OE_mean": 0.998,
+      "Brier_mean": 0.1045,
+      "stable_pct": 28.3,
+      "unstable_pct": 71.7
+    },
+    {
+      "n_pat": 500,
+      "slope_mean": 1.108,
+      "slope_sd": 0.307,
+      "OE_mean": 0.996,
+      "Brier_mean": 0.1037,
+      "stable_pct": 56.7,
+      "unstable_pct": 43.3
+    },
+    {
+      "n_pat": 1000,
+      "slope_mean": 1.081,
+      "slope_sd": 0.156,
+      "OE_mean": 0.975,
+      "Brier_mean": 0.1035,
+      "stable_pct": 80.0,
+      "unstable_pct": 20.0
+    },
+    {
+      "n_pat": 2000,
+      "slope_mean": 1.032,
+      "slope_sd": 0.106,
+      "OE_mean": 0.986,
+      "Brier_mean": 0.1033,
+      "stable_pct": 95.0,
+      "unstable_pct": 5.0
+    },
+    {
+      "n_pat": 5000,
+      "slope_mean": 1.036,
+      "slope_sd": 0.055,
+      "OE_mean": 0.976,
+      "Brier_mean": 0.1032,
+      "stable_pct": 100.0,
+      "unstable_pct": 0.0
+    }
+  ],
+  "min_stable_per_rep": [
+    "500",
+    "500",
+    "1000",
+    "1000",
+    "1000",
+    "1000",
+    "2000",
+    "5000",
+    "5000",
+    "5000"
+  ],
+  "min_stable_counts": {
+    "5000": 3,
+    "500": 2,
+    "1000": 4,
+    "2000": 1
+  },
+  "cumulative_stability_pct": {
+    "100": 0.0,
+    "200": 0.0,
+    "500": 20.0,
+    "1000": 60.0,
+    "2000": 70.0,
+    "5000": 100.0
+  },
+  "strategy_comparison": {
+    "frozen": {
+      "AUC": [
+        0.6914,
+        0.0045
+      ],
+      "Brier": [
+        0.1243,
+        0.0018
+      ],
+      "slope": [
+        0.4395,
+        0.0106
+      ],
+      "OE": 0.6361
+    },
+    "full_refit": {
+      "AUC": [
+        0.7488,
+        0.0058
+      ],
+      "Brier": [
+        0.0988,
+        0.0019
+      ],
+      "slope": [
+        1.0109,
+        0.0437
+      ],
+      "OE": 0.9816
+    },
+    "intercept_only": {
+      "AUC": [
+        0.6914,
+        0.0045
+      ],
+      "Brier": [
+        0.1093,
+        0.0017
+      ],
+      "slope": [
+        0.4395,
+        0.0106
+      ],
+      "OE": 0.9763
+    },
+    "recalibrate_2par": {
+      "AUC": [
+        0.6914,
+        0.0045
+      ],
+      "Brier": [
+        0.1032,
+        0.0019
+      ],
+      "slope": [
+        1.0356,
+        0.0497
+      ],
+      "OE": 0.9767
+    }
+  },
+  "refit_auc_gain": 0.0574,
+  "reweighting": {
+    "unweighted": {
+      "mean_abs_SMD": 0.2512,
+      "ESS_pct": 100.0,
+      "calib_slope": 0.432,
+      "calib_intercept": -1.2233,
+      "OE": 0.6441,
+      "Brier": 0.1256
+    },
+    "corrected_weights": {
+      "mean_abs_SMD": 0.0599,
+      "ESS_pct": 17.4,
+      "calib_slope": 0.4483,
+      "calib_intercept": -0.8814,
+      "OE": 0.9412,
+      "Brier_weighted": 0.1185
+    },
+    "v4_inverted_for_transparency": {
+      "mean_abs_SMD": 0.3495,
+      "calib_slope": 0.4488
+    },
+    "conclusion": "Correct weights restore covariate balance (|SMD|<0.1) but calibration slope stays ~0.45; case-mix/covariate shift explains calibration-in-the-large (O/E) but NOT slope collapse."
+  },
+  "dca": {
+    "threshold_min": 0.01,
+    "threshold_max": 0.59,
+    "frozen_nonpositive_from": 0.24,
+    "recalibrate_ge_frozen_everywhere": false,
+    "recalibrate_below_frozen_band": [
+      0.08,
+      0.1
+    ]
+  },
+  "sensitivity": {
+    "A_base_21": 0.7482,
+    "A_plus_NTLVEF": 0.796,
+    "B_base_21": 0.7689,
+    "B_plus_SOFAAPS": 0.868,
+    "V_plus_SOFAAPS": 0.795,
+    "eICU_frozen_vs_SOFA": {
+      "frozen": 0.689,
+      "SOFA_cohortfit": 0.712
+    },
+    "A_plus_NTLVEF_recomputed": 0.7961,
+    "B_plus_SOFAAPS_recomputed": 0.8684,
+    "V_plus_SOFAAPS_recomputed": 0.7947
+  }
+}

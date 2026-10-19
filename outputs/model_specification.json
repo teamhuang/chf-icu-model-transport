@@ -1,0 +1,158 @@
+{
+  "meta": {
+    "model": "L2 logistic (sklearn LogisticRegression, C=1.0, intercept unpenalised), linear terms only",
+    "fit_on": "MIMIC-IV derivation file (15,983 stays; 1,988 deaths); seed 2026",
+    "intercept_standardised": -2.33896342658026,
+    "prediction_rule": "eta = intercept + sum_i beta_i * z_i ; z_i = (x_i - scaler_mean_i)/scaler_scale_i with x_i imputed to impute_median_i if missing ; P = sigmoid(eta)",
+    "n_variables": 21
+  },
+  "coefficients": [
+    {
+      "variable": "Age",
+      "impute_median": 74.0,
+      "scaler_mean": 72.8776825376963,
+      "scaler_scale": 13.445787643934285,
+      "beta_standardised": 0.36080786769084644
+    },
+    {
+      "variable": "male",
+      "impute_median": 1.0,
+      "scaler_mean": 0.5463930426077708,
+      "scaler_scale": 0.49784303309134853,
+      "beta_standardised": -0.0049494677157969486
+    },
+    {
+      "variable": "HeartRate",
+      "impute_median": 82.0,
+      "scaler_mean": 84.17387223925421,
+      "scaler_scale": 16.01186721467475,
+      "beta_standardised": 0.1671719994397209
+    },
+    {
+      "variable": "RespiratoryRate",
+      "impute_median": 19.0,
+      "scaler_mean": 19.93249077144466,
+      "scaler_scale": 3.7768924157287413,
+      "beta_standardised": 0.29857307921828413
+    },
+    {
+      "variable": "Temperature",
+      "impute_median": 36.7,
+      "scaler_mean": 36.74651817556153,
+      "scaler_scale": 0.5069783770500929,
+      "beta_standardised": -0.12348462539021837
+    },
+    {
+      "variable": "SBP",
+      "impute_median": 113.0,
+      "scaler_mean": 116.1950822749171,
+      "scaler_scale": 17.0002442531095,
+      "beta_standardised": -0.4390908320284287
+    },
+    {
+      "variable": "AG",
+      "impute_median": 15.0,
+      "scaler_mean": 15.274354001126197,
+      "scaler_scale": 4.365116549327308,
+      "beta_standardised": 0.3977541586331556
+    },
+    {
+      "variable": "BUN",
+      "impute_median": 28.0,
+      "scaler_mean": 36.39035224926484,
+      "scaler_scale": 25.865574451534357,
+      "beta_standardised": 0.19565152713155323
+    },
+    {
+      "variable": "Creatinine",
+      "impute_median": 1.3,
+      "scaler_mean": 1.9023524995307515,
+      "scaler_scale": 1.7836618967725428,
+      "beta_standardised": -0.08841627471552001
+    },
+    {
+      "variable": "Chloride",
+      "impute_median": 103.0,
+      "scaler_mean": 102.17168241256334,
+      "scaler_scale": 6.983641666089996,
+      "beta_standardised": 0.12495225056622004
+    },
+    {
+      "variable": "MCH",
+      "impute_median": 29.8,
+      "scaler_mean": 29.54144403428643,
+      "scaler_scale": 2.7897499154239727,
+      "beta_standardised": 0.03273965627138054
+    },
+    {
+      "variable": "MCHC",
+      "impute_median": 32.4,
+      "scaler_mean": 32.30219608333855,
+      "scaler_scale": 1.7315882463978498,
+      "beta_standardised": -0.16468683654150615
+    },
+    {
+      "variable": "MCV",
+      "impute_median": 91.0,
+      "scaler_mean": 91.51146217856473,
+      "scaler_scale": 7.426122997045338,
+      "beta_standardised": 0.17790683830586657
+    },
+    {
+      "variable": "Platelet",
+      "impute_median": 193.0,
+      "scaler_mean": 209.1629856722768,
+      "scaler_scale": 101.75643122622336,
+      "beta_standardised": -0.06338857752488793
+    },
+    {
+      "variable": "Potassium",
+      "impute_median": 4.2,
+      "scaler_mean": 4.325633485578427,
+      "scaler_scale": 0.7845999422930096,
+      "beta_standardised": -0.0033045529772579383
+    },
+    {
+      "variable": "RBC",
+      "impute_median": 3.43,
+      "scaler_mean": 3.48534630544954,
+      "scaler_scale": 0.75694658482485,
+      "beta_standardised": 0.05483351304297122
+    },
+    {
+      "variable": "RDW",
+      "impute_median": 15.3,
+      "scaler_mean": 15.813001313896013,
+      "scaler_scale": 2.3714537050410924,
+      "beta_standardised": 0.26109932598985386
+    },
+    {
+      "variable": "Sodium",
+      "impute_median": 139.0,
+      "scaler_mean": 138.1109929299881,
+      "scaler_scale": 5.339193040864008,
+      "beta_standardised": -0.10476469230537533
+    },
+    {
+      "variable": "WBC",
+      "impute_median": 10.3,
+      "scaler_mean": 11.916962397547394,
+      "scaler_scale": 8.671253666234097,
+      "beta_standardised": 0.14254075063269195
+    },
+    {
+      "variable": "COPD",
+      "impute_median": 0.0,
+      "scaler_mean": 0.394731902646562,
+      "scaler_scale": 0.48879303153746684,
+      "beta_standardised": 0.03688963784845331
+    },
+    {
+      "variable": "Diabetes",
+      "impute_median": 0.0,
+      "scaler_mean": 0.4419070262153538,
+      "scaler_scale": 0.49661373963761457,
+      "beta_standardised": 0.006361113521924326
+    }
+  ]
+}

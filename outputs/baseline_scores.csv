@@ -1,0 +1,8 @@
+Cohort,Model,AUC
+A_MIMIC-III,Frozen 21-var model,0.7482
+V_eICU,Frozen 21-var model,0.689
+B_MIMIC-IV,Frozen 21-var model,0.7689
+B_MIMIC-IV,SOFA alone (cohort-specific fit),0.7269
+B_MIMIC-IV,APSIII alone (cohort-specific fit),0.8312
+V_eICU,SOFA alone (cohort-specific fit),0.7121
+V_eICU,APSIII alone (cohort-specific fit),0.6978

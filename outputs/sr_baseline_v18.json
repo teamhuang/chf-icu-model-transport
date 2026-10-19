@@ -1,0 +1,825 @@
+{
+  "note": "Per-cohort summary of the 21 model covariates, computed on OBSERVED values. SMD is the absolute standardised mean difference (eICU vs MIMIC-IV) already tabulated in the supplement; it is reported here so the characteristics table also documents the covariate shift that motivates the measured-covariate standardisation analysis. MIMIC-IV and eICU are complete; the MIMIC-III file carries 57 missing cells in four vital signs (1.79% of stays).",
+  "missing_cells": {
+    "Age": {
+      "MIMIC_IV": 0,
+      "MIMIC_III": 0,
+      "eICU": 0
+    },
+    "male": {
+      "MIMIC_IV": 0,
+      "MIMIC_III": 0,
+      "eICU": 0
+    },
+    "HeartRate": {
+      "MIMIC_IV": 0,
+      "MIMIC_III": 12,
+      "eICU": 0
+    },
+    "RespiratoryRate": {
+      "MIMIC_IV": 0,
+      "MIMIC_III": 12,
+      "eICU": 0
+    },
+    "Temperature": {
+      "MIMIC_IV": 0,
+      "MIMIC_III": 18,
+      "eICU": 0
+    },
+    "SBP": {
+      "MIMIC_IV": 0,
+      "MIMIC_III": 15,
+      "eICU": 0
+    },
+    "AG": {
+      "MIMIC_IV": 0,
+      "MIMIC_III": 0,
+      "eICU": 0
+    },
+    "BUN": {
+      "MIMIC_IV": 0,
+      "MIMIC_III": 0,
+      "eICU": 0
+    },
+    "Creatinine": {
+      "MIMIC_IV": 0,
+      "MIMIC_III": 0,
+      "eICU": 0
+    },
+    "Chloride": {
+      "MIMIC_IV": 0,
+      "MIMIC_III": 0,
+      "eICU": 0
+    },
+    "MCH": {
+      "MIMIC_IV": 0,
+      "MIMIC_III": 0,
+      "eICU": 0
+    },
+    "MCHC": {
+      "MIMIC_IV": 0,
+      "MIMIC_III": 0,
+      "eICU": 0
+    },
+    "MCV": {
+      "MIMIC_IV": 0,
+      "MIMIC_III": 0,
+      "eICU": 0
+    },
+    "Platelet": {
+      "MIMIC_IV": 0,
+      "MIMIC_III": 0,
+      "eICU": 0
+    },
+    "Potassium": {
+      "MIMIC_IV": 0,
+      "MIMIC_III": 0,
+      "eICU": 0
+    },
+    "RBC": {
+      "MIMIC_IV": 0,
+      "MIMIC_III": 0,
+      "eICU": 0
+    },
+    "RDW": {
+      "MIMIC_IV": 0,
+      "MIMIC_III": 0,
+      "eICU": 0
+    },
+    "Sodium": {
+      "MIMIC_IV": 0,
+      "MIMIC_III": 0,
+      "eICU": 0
+    },
+    "WBC": {
+      "MIMIC_IV": 0,
+      "MIMIC_III": 0,
+      "eICU": 0
+    },
+    "COPD": {
+      "MIMIC_IV": 0,
+      "MIMIC_III": 0,
+      "eICU": 0
+    },
+    "Diabetes": {
+      "MIMIC_IV": 0,
+      "MIMIC_III": 0,
+      "eICU": 0
+    }
+  },
+  "missing_summary": {
+    "MIMIC_IV_total": 0,
+    "eICU_total": 0,
+    "MIMIC_III_total": 57,
+    "MIMIC_III_rows_affected": 21,
+    "MIMIC_III_pct_rows": 1.79
+  },
+  "units": {
+    "age": "years",
+    "male": "binary 1=male",
+    "HeartRate": "beats/min",
+    "RespiratoryRate": "breaths/min",
+    "Temperature": "deg C",
+    "SBP": "mmHg",
+    "AG": "mmol/L",
+    "BUN": "mg/dL",
+    "Creatinine": "mg/dL",
+    "Chloride": "mmol/L",
+    "MCH": "pg",
+    "MCHC": "g/dL",
+    "MCV": "fL",
+    "Platelet": "10^9/L",
+    "Potassium": "mmol/L",
+    "RBC": "10^6/uL",
+    "RDW": "%",
+    "Sodium": "mmol/L",
+    "WBC": "10^9/L",
+    "COPD": "binary",
+    "Diabetes": "binary"
+  },
+  "cohort_sizes": {
+    "MIMIC_IV": {
+      "n": 15983,
+      "deaths": 1988,
+      "prevalence": 0.12438215604079335
+    },
+    "MIMIC_III": {
+      "n": 1176,
+      "deaths": 159,
+      "prevalence": 0.13520408163265307
+    },
+    "eICU": {
+      "n": 14428,
+      "deaths": 1852,
+      "prevalence": 0.12836151926808984
+    }
+  },
+  "variables": {
+    "Age": {
+      "MIMIC_IV": {
+        "kind": "continuous",
+        "n": 15983,
+        "n_missing": 0,
+        "mean": 72.8776825376963,
+        "sd": 13.446208291454106,
+        "median": 74.0,
+        "q1": 64.0,
+        "q3": 83.0
+      },
+      "MIMIC_III": {
+        "kind": "continuous",
+        "n": 1176,
+        "n_missing": 0,
+        "mean": 74.04761904761905,
+        "sd": 13.437240513740663,
+        "median": 77.0,
+        "q1": 65.0,
+        "q3": 85.0
+      },
+      "eICU": {
+        "kind": "continuous",
+        "n": 14428,
+        "n_missing": 0,
+        "mean": 70.33206265594677,
+        "sd": 13.833612269897701,
+        "median": 72.0,
+        "q1": 62.0,
+        "q3": 81.0
+      },
+      "SMD_eICU_vs_MIMICIV": 0.1866
+    },
+    "male": {
+      "MIMIC_IV": {
+        "kind": "binary",
+        "n": 15983,
+        "n_missing": 0,
+        "n_pos": 8733,
+        "pct_pos": 54.63930426077708
+      },
+      "MIMIC_III": {
+        "kind": "binary",
+        "n": 1176,
+        "n_missing": 0,
+        "n_pos": 558,
+        "pct_pos": 47.44897959183674
+      },
+      "eICU": {
+        "kind": "binary",
+        "n": 14428,
+        "n_missing": 0,
+        "n_pos": 7562,
+        "pct_pos": 52.411976711948995
+      },
+      "SMD_eICU_vs_MIMICIV": 0.0447
+    },
+    "HeartRate": {
+      "MIMIC_IV": {
+        "kind": "continuous",
+        "n": 15983,
+        "n_missing": 0,
+        "mean": 84.17387223925421,
+        "sd": 16.012368141240742,
+        "median": 82.0,
+        "q1": 73.0,
+        "q3": 94.0
+      },
+      "MIMIC_III": {
+        "kind": "continuous",
+        "n": 1176,
+        "n_missing": 12,
+        "mean": 84.57584840750859,
+        "sd": 16.018701499654284,
+        "median": 83.61079944,
+        "q1": 72.37125,
+        "q3": 95.907142855
+      },
+      "eICU": {
+        "kind": "continuous",
+        "n": 14428,
+        "n_missing": 0,
+        "mean": 99.84537011366787,
+        "sd": 30.669806023282238,
+        "median": 103.0,
+        "q1": 85.0,
+        "q3": 120.0
+      },
+      "SMD_eICU_vs_MIMICIV": 0.6406
+    },
+    "RespiratoryRate": {
+      "MIMIC_IV": {
+        "kind": "continuous",
+        "n": 15983,
+        "n_missing": 0,
+        "mean": 19.93249077144466,
+        "sd": 3.77701057469937,
+        "median": 19.0,
+        "q1": 17.0,
+        "q3": 22.0
+      },
+      "MIMIC_III": {
+        "kind": "continuous",
+        "n": 1176,
+        "n_missing": 12,
+        "mean": 20.801511481503436,
+        "sd": 4.0029871180152865,
+        "median": 20.37230769,
+        "q1": 17.9256944475,
+        "q3": 23.39119977
+      },
+      "eICU": {
+        "kind": "continuous",
+        "n": 14428,
+        "n_missing": 0,
+        "mean": 27.61303714998614,
+        "sd": 14.20018040616953,
+        "median": 29.0,
+        "q1": 13.0,
+        "q3": 36.0
+      },
+      "SMD_eICU_vs_MIMICIV": 0.7392
+    },
+    "Temperature": {
+      "MIMIC_IV": {
+        "kind": "continuous",
+        "n": 15983,
+        "n_missing": 0,
+        "mean": 36.74651817556153,
+        "sd": 0.50699423771981,
+        "median": 36.7,
+        "q1": 36.5,
+        "q3": 37.0
+      },
+      "MIMIC_III": {
+        "kind": "continuous",
+        "n": 1176,
+        "n_missing": 18,
+        "mean": 36.67728595220207,
+        "sd": 0.6075583791550676,
+        "median": 36.650794195,
+        "q1": 36.2860449775,
+        "q3": 37.021990782500005
+      },
+      "eICU": {
+        "kind": "continuous",
+        "n": 14428,
+        "n_missing": 0,
+        "mean": 36.362733573606874,
+        "sd": 0.9008557420517388,
+        "median": 36.4,
+        "q1": 36.1,
+        "q3": 36.7
+      },
+      "SMD_eICU_vs_MIMICIV": 0.5251
+    },
+    "SBP": {
+      "MIMIC_IV": {
+        "kind": "continuous",
+        "n": 15983,
+        "n_missing": 0,
+        "mean": 116.1950822749171,
+        "sd": 17.000776100761026,
+        "median": 113.0,
+        "q1": 104.0,
+        "q3": 126.0
+      },
+      "MIMIC_III": {
+        "kind": "continuous",
+        "n": 1176,
+        "n_missing": 15,
+        "mean": 117.99503522048234,
+        "sd": 17.367618384969177,
+        "median": 116.1282051,
+        "q1": 105.3913043,
+        "q3": 128.625
+      },
+      "eICU": {
+        "kind": "continuous",
+        "n": 14428,
+        "n_missing": 0,
+        "mean": 120.97123648461326,
+        "sd": 27.814931494166384,
+        "median": 119.0,
+        "q1": 101.0,
+        "q3": 139.0
+      },
+      "SMD_eICU_vs_MIMICIV": 0.2072
+    },
+    "AG": {
+      "MIMIC_IV": {
+        "kind": "continuous",
+        "n": 15983,
+        "n_missing": 0,
+        "mean": 15.274354001126197,
+        "sd": 4.365253110717299,
+        "median": 15.0,
+        "q1": 12.0,
+        "q3": 17.0
+      },
+      "MIMIC_III": {
+        "kind": "continuous",
+        "n": 1176,
+        "n_missing": 0,
+        "mean": 13.92375471212925,
+        "sd": 2.653462917985563,
+        "median": 13.66666667,
+        "q1": 12.25,
+        "q3": 15.4041666675
+      },
+      "eICU": {
+        "kind": "continuous",
+        "n": 14428,
+        "n_missing": 0,
+        "mean": 11.255925977266426,
+        "sd": 4.684288856797499,
+        "median": 11.0,
+        "q1": 8.0,
+        "q3": 14.0
+      },
+      "SMD_eICU_vs_MIMICIV": 0.8876
+    },
+    "BUN": {
+      "MIMIC_IV": {
+        "kind": "continuous",
+        "n": 15983,
+        "n_missing": 0,
+        "mean": 36.39035224926484,
+        "sd": 25.86638364843898,
+        "median": 28.0,
+        "q1": 18.0,
+        "q3": 46.0
+      },
+      "MIMIC_III": {
+        "kind": "continuous",
+        "n": 1176,
+        "n_missing": 0,
+        "mean": 36.29357424681972,
+        "sd": 21.86020819907926,
+        "median": 30.611111115,
+        "q1": 20.83333333,
+        "q3": 45.2556818175
+      },
+      "eICU": {
+        "kind": "continuous",
+        "n": 14428,
+        "n_missing": 0,
+        "mean": 36.02740504574439,
+        "sd": 23.422870901480227,
+        "median": 29.0,
+        "q1": 19.0,
+        "q3": 46.0
+      },
+      "SMD_eICU_vs_MIMICIV": 0.0147
+    },
+    "Creatinine": {
+      "MIMIC_IV": {
+        "kind": "continuous",
+        "n": 15983,
+        "n_missing": 0,
+        "mean": 1.9023524995307515,
+        "sd": 1.783717698111441,
+        "median": 1.3,
+        "q1": 0.9,
+        "q3": 2.1
+      },
+      "MIMIC_III": {
+        "kind": "continuous",
+        "n": 1176,
+        "n_missing": 0,
+        "mean": 1.6406605574013606,
+        "sd": 1.2779964052255595,
+        "median": 1.2854166665000002,
+        "q1": 0.94,
+        "q3": 1.89464285725
+      },
+      "eICU": {
+        "kind": "continuous",
+        "n": 14428,
+        "n_missing": 0,
+        "mean": 1.9818408649847519,
+        "sd": 1.8979368161089494,
+        "median": 1.4,
+        "q1": 1.0,
+        "q3": 2.2
+      },
+      "SMD_eICU_vs_MIMICIV": 0.0432
+    },
+    "Chloride": {
+      "MIMIC_IV": {
+        "kind": "continuous",
+        "n": 15983,
+        "n_missing": 0,
+        "mean": 102.17168241256334,
+        "sd": 6.983860147269674,
+        "median": 103.0,
+        "q1": 98.0,
+        "q3": 107.0
+      },
+      "MIMIC_III": {
+        "kind": "continuous",
+        "n": 1176,
+        "n_missing": 0,
+        "mean": 102.29204846178571,
+        "sd": 5.334562200790542,
+        "median": 102.51666664999999,
+        "q1": 99.0,
+        "q3": 105.5714286
+      },
+      "eICU": {
+        "kind": "continuous",
+        "n": 14428,
+        "n_missing": 0,
+        "mean": 101.11753534793456,
+        "sd": 6.634997578860828,
+        "median": 101.0,
+        "q1": 97.0,
+        "q3": 105.0
+      },
+      "SMD_eICU_vs_MIMICIV": 0.1548
+    },
+    "MCH": {
+      "MIMIC_IV": {
+        "kind": "continuous",
+        "n": 15983,
+        "n_missing": 0,
+        "mean": 29.54144403428643,
+        "sd": 2.7898371919312264,
+        "median": 29.8,
+        "q1": 28.0,
+        "q3": 31.3
+      },
+      "MIMIC_III": {
+        "kind": "continuous",
+        "n": 1176,
+        "n_missing": 0,
+        "mean": 29.53980283293368,
+        "sd": 2.620163597241417,
+        "median": 29.752777780000002,
+        "q1": 28.25,
+        "q3": 31.24
+      },
+      "eICU": {
+        "kind": "continuous",
+        "n": 14428,
+        "n_missing": 0,
+        "mean": 29.26435403382312,
+        "sd": 2.7953775785116965,
+        "median": 29.5,
+        "q1": 27.7,
+        "q3": 31.0
+      },
+      "SMD_eICU_vs_MIMICIV": 0.0992
+    },
+    "MCHC": {
+      "MIMIC_IV": {
+        "kind": "continuous",
+        "n": 15983,
+        "n_missing": 0,
+        "mean": 32.30219608333855,
+        "sd": 1.7316424186278807,
+        "median": 32.4,
+        "q1": 31.2,
+        "q3": 33.5
+      },
+      "MIMIC_III": {
+        "kind": "continuous",
+        "n": 1176,
+        "n_missing": 0,
+        "mean": 32.86458372791666,
+        "sd": 1.4028709273721514,
+        "median": 32.98831169,
+        "q1": 32.0083333325,
+        "q3": 33.825
+      },
+      "eICU": {
+        "kind": "continuous",
+        "n": 14428,
+        "n_missing": 0,
+        "mean": 32.32064042140283,
+        "sd": 1.528887596149508,
+        "median": 32.4,
+        "q1": 31.4,
+        "q3": 33.3
+      },
+      "SMD_eICU_vs_MIMICIV": 0.0113
+    },
+    "MCV": {
+      "MIMIC_IV": {
+        "kind": "continuous",
+        "n": 15983,
+        "n_missing": 0,
+        "mean": 91.51146217856473,
+        "sd": 7.426355321123577,
+        "median": 91.0,
+        "q1": 87.0,
+        "q3": 96.0
+      },
+      "MIMIC_III": {
+        "kind": "continuous",
+        "n": 1176,
+        "n_missing": 0,
+        "mean": 89.90256145599488,
+        "sd": 6.535267302419111,
+        "median": 90.0,
+        "q1": 86.25,
+        "q3": 93.85714286
+      },
+      "eICU": {
+        "kind": "continuous",
+        "n": 14428,
+        "n_missing": 0,
+        "mean": 90.54099667313557,
+        "sd": 7.504435695159384,
+        "median": 90.8,
+        "q1": 86.0,
+        "q3": 95.0
+      },
+      "SMD_eICU_vs_MIMICIV": 0.13
+    },
+    "Platelet": {
+      "MIMIC_IV": {
+        "kind": "continuous",
+        "n": 15983,
+        "n_missing": 0,
+        "mean": 209.1629856722768,
+        "sd": 101.75961464630662,
+        "median": 193.0,
+        "q1": 143.0,
+        "q3": 255.0
+      },
+      "MIMIC_III": {
+        "kind": "continuous",
+        "n": 1176,
+        "n_missing": 0,
+        "mean": 241.51750729246683,
+        "sd": 113.16784414684895,
+        "median": 222.6666667,
+        "q1": 168.90404039999999,
+        "q3": 304.2784091
+      },
+      "eICU": {
+        "kind": "continuous",
+        "n": 14428,
+        "n_missing": 0,
+        "mean": 214.71340449126697,
+        "sd": 99.90740078380922,
+        "median": 201.0,
+        "q1": 150.0,
+        "q3": 261.0
+      },
+      "SMD_eICU_vs_MIMICIV": 0.055
+    },
+    "Potassium": {
+      "MIMIC_IV": {
+        "kind": "continuous",
+        "n": 15983,
+        "n_missing": 0,
+        "mean": 4.325633485578426,
+        "sd": 0.7846244882719076,
+        "median": 4.2,
+        "q1": 3.8,
+        "q3": 4.7
+      },
+      "MIMIC_III": {
+        "kind": "continuous",
+        "n": 1176,
+        "n_missing": 0,
+        "mean": 4.176424581568027,
+        "sd": 0.41494268522128247,
+        "median": 4.1148351645000005,
+        "q1": 3.9,
+        "q3": 4.4
+      },
+      "eICU": {
+        "kind": "continuous",
+        "n": 14428,
+        "n_missing": 0,
+        "mean": 4.232232464652065,
+        "sd": 0.7428982075268622,
+        "median": 4.1,
+        "q1": 3.8,
+        "q3": 4.6
+      },
+      "SMD_eICU_vs_MIMICIV": 0.1222
+    },
+    "RBC": {
+      "MIMIC_IV": {
+        "kind": "continuous",
+        "n": 15983,
+        "n_missing": 0,
+        "mean": 3.48534630544954,
+        "sd": 0.7569702656765764,
+        "median": 3.43,
+        "q1": 2.93,
+        "q3": 3.97
+      },
+      "MIMIC_III": {
+        "kind": "continuous",
+        "n": 1176,
+        "n_missing": 0,
+        "mean": 3.5747016089744896,
+        "sd": 0.6270126086265982,
+        "median": 3.4892857145000002,
+        "q1": 3.12,
+        "q3": 3.9
+      },
+      "eICU": {
+        "kind": "continuous",
+        "n": 14428,
+        "n_missing": 0,
+        "mean": 3.812170779040754,
+        "sd": 0.8034445672272283,
+        "median": 3.8,
+        "q1": 3.2,
+        "q3": 4.3
+      },
+      "SMD_eICU_vs_MIMICIV": 0.4187
+    },
+    "RDW": {
+      "MIMIC_IV": {
+        "kind": "continuous",
+        "n": 15983,
+        "n_missing": 0,
+        "mean": 15.813001313896015,
+        "sd": 2.371527895274183,
+        "median": 15.3,
+        "q1": 14.1,
+        "q3": 17.0
+      },
+      "MIMIC_III": {
+        "kind": "continuous",
+        "n": 1176,
+        "n_missing": 0,
+        "mean": 15.952853518435374,
+        "sd": 2.132405080284545,
+        "median": 15.50669643,
+        "q1": 14.459285715,
+        "q3": 16.93923611
+      },
+      "eICU": {
+        "kind": "continuous",
+        "n": 14428,
+        "n_missing": 0,
+        "mean": 16.23424591072914,
+        "sd": 2.5668330038151117,
+        "median": 15.7,
+        "q1": 14.4,
+        "q3": 17.5
+      },
+      "SMD_eICU_vs_MIMICIV": 0.1705
+    },
+    "Sodium": {
+      "MIMIC_IV": {
+        "kind": "continuous",
+        "n": 15983,
+        "n_missing": 0,
+        "mean": 138.1109929299881,
+        "sd": 5.3393600759511255,
+        "median": 139.0,
+        "q1": 135.0,
+        "q3": 141.0
+      },
+      "MIMIC_III": {
+        "kind": "continuous",
+        "n": 1176,
+        "n_missing": 0,
+        "mean": 138.8970091242347,
+        "sd": 4.14617230997998,
+        "median": 139.25,
+        "q1": 136.6666667,
+        "q3": 141.6
+      },
+      "eICU": {
+        "kind": "continuous",
+        "n": 14428,
+        "n_missing": 0,
+        "mean": 137.69982672581094,
+        "sd": 5.4701278898457915,
+        "median": 138.0,
+        "q1": 135.0,
+        "q3": 141.0
+      },
+      "SMD_eICU_vs_MIMICIV": 0.0761
+    },
+    "WBC": {
+      "MIMIC_IV": {
+        "kind": "continuous",
+        "n": 15983,
+        "n_missing": 0,
+        "mean": 11.916962397547394,
+        "sd": 8.671524943859847,
+        "median": 10.3,
+        "q1": 7.4,
+        "q3": 14.3
+      },
+      "MIMIC_III": {
+        "kind": "continuous",
+        "n": 1176,
+        "n_missing": 0,
+        "mean": 10.715042570306972,
+        "sd": 5.231133232011151,
+        "median": 9.68375,
+        "q1": 7.43625,
+        "q3": 12.743888890000001
+      },
+      "eICU": {
+        "kind": "continuous",
+        "n": 14428,
+        "n_missing": 0,
+        "mean": 11.331065289714443,
+        "sd": 8.186687774788743,
+        "median": 9.87,
+        "q1": 7.3,
+        "q3": 13.4
+      },
+      "SMD_eICU_vs_MIMICIV": 0.0695
+    },
+    "COPD": {
+      "MIMIC_IV": {
+        "kind": "binary",
+        "n": 15983,
+        "n_missing": 0,
+        "n_pos": 6309,
+        "pct_pos": 39.473190264656196
+      },
+      "MIMIC_III": {
+        "kind": "binary",
+        "n": 1176,
+        "n_missing": 0,
+        "n_pos": 89,
+        "pct_pos": 7.568027210884354
+      },
+      "eICU": {
+        "kind": "binary",
+        "n": 14428,
+        "n_missing": 0,
+        "n_pos": 3012,
+        "pct_pos": 20.876074299972274
+      },
+      "SMD_eICU_vs_MIMICIV": 0.4137
+    },
+    "Diabetes": {
+      "MIMIC_IV": {
+        "kind": "binary",
+        "n": 15983,
+        "n_missing": 0,
+        "n_pos": 7063,
+        "pct_pos": 44.19070262153538
+      },
+      "MIMIC_III": {
+        "kind": "binary",
+        "n": 1176,
+        "n_missing": 0,
+        "n_pos": 495,
+        "pct_pos": 42.09183673469388
+      },
+      "eICU": {
+        "kind": "binary",
+        "n": 14428,
+        "n_missing": 0,
+        "n_pos": 4532,
+        "pct_pos": 31.41114499584142
+      },
+      "SMD_eICU_vs_MIMICIV": 0.2659
+    }
+  }
+}
